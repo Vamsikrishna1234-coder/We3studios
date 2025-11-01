@@ -35,7 +35,7 @@ const TwoDPlannings = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50"><br></br>
+    <div className="min-h-screen bg-gray-50">
       {/* Intro Section */}
       <section className="relative h-[75vh] flex items-center justify-center bg-gray-600">
         <img
@@ -44,7 +44,7 @@ const TwoDPlannings = () => {
           alt="Background Plan"
         />
         <div className="relative z-10 text-center px-4">
-          <h1 className="text-4xl font-bold text-white"><br></br>
+          <h1 className="text-4xl font-bold text-white">
             2D Planning & Layouts
           </h1>
           <p className="text-gray-200 mt-3 max-w-2xl mx-auto">

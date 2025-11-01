@@ -14,7 +14,7 @@ const PortfolioPage = () => {
   ];
 
   return (
-    <div className="overflow-hidden"><br></br>
+    <div className="overflow-hidden">
       {/* Intro Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black py-16 pt-28 pb-16 min-h-[55vh] text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

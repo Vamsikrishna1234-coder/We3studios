@@ -6,7 +6,7 @@ import CTAButton from "../components/CtaButton";
 
 const InteriorDesign = () => {
   return (
-    <div className="min-h-screen bg-gray-100"><br></br>
+    <div className="min-h-screen bg-gray-100">
       {/* Hero Section */}
       <section
         className="relative bg-cover bg-center h-[75vh] flex items-center justify-center"

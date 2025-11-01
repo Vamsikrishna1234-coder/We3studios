@@ -34,7 +34,7 @@ export default function AboutUsSection() {
     ><br></br>
       <div className="container mx-auto px-4 text-white">
 
-        {/* Heading */}<br></br>
+        {/* Heading */}
         <h1 className="text-5xl font-bold text-center mb-3">About Us</h1>
         <p className="text-yellow-400 italic text-lg mb-12 text-center">
           “Design is not just what it looks like and feels like-design is how it works.”

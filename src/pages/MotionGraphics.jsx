@@ -35,7 +35,7 @@ const MotionGraphics = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50"><br></br>
+    <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className="relative h-[75vh] flex items-center justify-center bg-black">
         <video
@@ -46,7 +46,7 @@ const MotionGraphics = () => {
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="relative z-10 text-center text-white px-4"><br></br>
+        <div className="relative z-10 text-center text-white px-4">
             <h1 className="text-4xl font-bold">Motion Graphics Studio</h1>
             <p className="mt-4 max-w-xl mx-auto">
             Explore dynamic animations and cinematic visuals crafted to engage and captivate.

@@ -72,7 +72,7 @@ export default function ScrollToTop({ behavior = "smooth" }) {
             attempts++;
             setTimeout(tryScroll, 50);
           } else {
-            scrollTo(isOverlay ? headerHeight : 0);
+            scrollTo(0);
           }
         };
         setTimeout(tryScroll, 0);

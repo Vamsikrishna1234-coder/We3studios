@@ -211,7 +211,7 @@ function Header() {
       </header>
 
       {/* Spacer to prevent overlap */}
-        <div className="h-[70px] sm:h-[84px] md:h-[88px] lg:h-[92px]"></div>
+       <div style={{ height: "var(--header-height, 90px)" }}></div>
     </>
   );
 }

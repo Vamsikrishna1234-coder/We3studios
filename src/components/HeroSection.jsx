@@ -48,22 +48,17 @@ const slides = [
 const HeroSection = () => {
   const [current, setCurrent] = useState(0);
   const [progress, setProgress] = useState(0);
-  const durationRef = useRef(4500); // base duration (ms)
+  const durationRef = useRef(4500); // transition duration
   const requestRef = useRef();
   const startTimeRef = useRef(null);
   const navigate = useNavigate();
 
-  // Calculate adjusted duration based on screen width
+  // ✅ Use a fixed transition duration for all devices (faster + consistent)
   useEffect(() => {
-    const baseDuration = 4500;
-    const screenWidth = window.innerWidth;
-
-    // Adjust speed proportionally (keep same visual time)
-    // Larger screens = faster transitions (so same pixel speed)
-    const scale = Math.max(0.8, Math.min(1.4, 1920 / screenWidth));
-    durationRef.current = baseDuration * scale;
+    durationRef.current = 4500;
   }, []);
 
+  // ✅ Slide auto-change timer
   useEffect(() => {
     const slideTimer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
@@ -74,6 +69,7 @@ const HeroSection = () => {
     return () => clearInterval(slideTimer);
   }, []);
 
+  // ✅ Progress animation per frame
   useEffect(() => {
     const animate = (timestamp) => {
       if (!startTimeRef.current) startTimeRef.current = timestamp;
@@ -98,13 +94,16 @@ const HeroSection = () => {
   };
 
   const handleExploreClick = () => {
+    // ✅ Scroll to top instantly when navigating
+    window.scrollTo({ top: 0, behavior: "instant" });
     navigate(slides[current].link);
   };
 
   const direction = current % 2 === 0 ? 1 : -1;
 
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-black"><br></br>
+    <div className="relative w-full min-h-[100svh] overflow-hidden bg-black">
+      {/* Slide Backgrounds */}
       {slides.map((slide, index) => {
         const isCurrent = index === current;
         return (
@@ -121,6 +120,7 @@ const HeroSection = () => {
                 muted
                 loop
                 playsInline
+                preload="auto"
                 className="absolute top-0 left-0 w-full h-full object-cover object-center z-10"
                 style={{
                   clipPath:
@@ -128,11 +128,12 @@ const HeroSection = () => {
                       ? `inset(0 ${100 - progress}% 0 0)`
                       : `inset(0 0 0 ${100 - progress}%)`,
                 }}
-              ></video>
+              />
             ) : (
               <img
                 src={slide.image}
                 alt={`Slide ${index + 1}`}
+                loading="lazy"
                 className="absolute top-0 left-0 w-full h-full object-cover z-10"
                 style={{
                   clipPath:
@@ -182,7 +183,9 @@ const HeroSection = () => {
             key={index}
             onClick={() => goToSlide(index)}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === current ? "bg-white scale-125" : "bg-white/50 hover:bg-white/80"
+              index === current
+                ? "bg-white scale-125"
+                : "bg-white/50 hover:bg-white/80"
             }`}
           ></button>
         ))}

@@ -1,30 +1,26 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { X } from "lucide-react";
-import rendervideo from "../assets/videos/3d render video.mp4"
+import rendervideo from "../assets/videos/3d render video.mp4";
 import Renders from "../components/Renders";
 import CTAButton from "../components/CtaButton";
 import Footer from "../components/FooterImage";
 
 const VisualizationRendering = () => {
-  // Your intro/sample video
-  const renderVideo =
-    rendervideo ; // 🔁 Replace with your own video
+  const renderVideo = rendervideo;
 
-  // Each card shares the same video
   const sampleRenders = [
     { title: "Interior Visualization", video: renderVideo },
     { title: "Lighting & Mood Rendering", video: renderVideo },
     { title: "Architectural Walkthrough", video: renderVideo },
   ];
 
-  // State for fullscreen video
   const [activeVideo, setActiveVideo] = useState(null);
 
   return (
-    <div className="h-[75vh] bg-gray-50 relative"><br></br>
-      {/* Intro Section */}
-      <section className="relative h-[75vh] flex items-center justify-center overflow-hidden">
+    <div className="bg-gray-50 relative overflow-x-hidden">
+      {/* Hero Section */}
+      <section className="relative min-h-[75vh] flex items-center justify-center overflow-hidden">
         <video
           src={renderVideo}
           autoPlay
@@ -35,7 +31,7 @@ const VisualizationRendering = () => {
           onClick={() => setActiveVideo(renderVideo)}
         />
         <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 text-center px-4"><br></br>
+        <div className="relative z-10 text-center px-4">
           <h1 className="text-3xl sm:text-5xl font-bold text-white mb-4">
             3D Visualization & Rendering
           </h1>
@@ -46,6 +42,7 @@ const VisualizationRendering = () => {
         </div>
       </section>
 
+      {/* Description Section */}
       <section className="relative overflow-hidden pt-28 pb-16 min-h-[60vh] bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white px-5 sm:px-8 lg:px-16">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-4xl lg:text-5xl font-extrabold mb-10 leading-tight">
@@ -55,25 +52,33 @@ const VisualizationRendering = () => {
 
         <div className="max-w-5xl mx-auto space-y-6">
           <p className="text-gray-300 text-base sm:text-lg leading-relaxed text-justify break-words hyphens-auto">
-            At <span className="text-yellow-400 font-semibold">WE3STUDIOS</span>, we specialize in creating photorealistic 3D visualizations that bring architectural and interior design concepts to life. Each render is meticulously crafted to showcase materials, lighting, and spatial relationships with stunning accuracy.
+            At{" "}
+            <span className="text-yellow-400 font-semibold">WE3STUDIOS</span>, we
+            specialize in creating photorealistic 3D visualizations that bring
+            architectural and interior design concepts to life. Each render is
+            meticulously crafted to showcase materials, lighting, and spatial
+            relationships with stunning accuracy.
           </p>
 
           <p className="text-gray-300 text-base sm:text-lg leading-relaxed text-justify break-words hyphens-auto">
-            Our services include interior and exterior renders, lighting studies, animated walkthroughs, and product visualizations. We work closely with clients to provide visuals that allow them to experience the final design before construction begins.
+            Our services include interior and exterior renders, lighting studies,
+            animated walkthroughs, and product visualizations. We work closely
+            with clients to provide visuals that allow them to experience the
+            final design before construction begins.
           </p>
 
           <p className="text-gray-300 text-base sm:text-lg leading-relaxed text-justify break-words hyphens-auto">
-            Whether for marketing, client presentations, or design approvals, our renders communicate clarity, realism, and impact. Every project is customized to match the client’s vision, combining creativity and technical expertise to deliver immersive and interactive experiences.
+            Whether for marketing, client presentations, or design approvals, our
+            renders communicate clarity, realism, and impact. Every project is
+            customized to match the client’s vision, combining creativity and
+            technical expertise to deliver immersive and interactive experiences.
           </p>
         </div>
       </section>
 
-
-
-
       {/* Sample Renders Section */}
       <div>
-          <Renders/>
+        <Renders />
       </div>
 
       {/* Workflow Section */}
@@ -118,13 +123,12 @@ const VisualizationRendering = () => {
         </div>
       </section>
 
-
-
       {/* CTA */}
       <div>
-        <CTAButton/>
-      </div><br></br>
-      <Footer/>
+        <CTAButton />
+      </div>
+
+      
     </div>
   );
 };

@@ -6,7 +6,7 @@ const ContactUs = () => {
     <section className="relative overflow-hidden pt-24 pb-16 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white px-4 sm:px-6 md:px-8"><br></br>
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
         {/* Left Side - Contact Info + Map */}
-        <div><br></br>
+        <div>
           <h2 className="text-4xl font-bold mb-6 text-blue-400">Get in Touch</h2>
           <p className="text-gray-300 mb-8 leading-relaxed">
             We’d love to hear from you! Whether you have a question about our services,
